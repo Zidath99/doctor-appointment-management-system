@@ -16,5 +16,15 @@ namespace Doctor_Appointment_Management_System.User
         {
             InitializeComponent();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            String username = txtUsername.Text;
+            String name = txtName.Text;
+            String email = txtEmail.Text;
+            String password = txtPassword.Text;
+        }
+
+       
     }
 }
