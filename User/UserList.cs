@@ -28,7 +28,7 @@ namespace Doctor_Appointment_Management_System.User
 
             // creare Datatable object
             DataTable userListDataTable = new DataTable();
-            SqlDataAdapter auserListSqlAdapter = new SqlDataAdapter("select username as Username, name as Name, email as Email, user_type as [User Type] from [user]", this.databaseConnection);
+            SqlDataAdapter auserListSqlAdapter = new SqlDataAdapter("select id as ID, username as Username, name as Name, email as Email, user_type as [User Type] from [user]", this.databaseConnection);
 
             auserListSqlAdapter.Fill(userListDataTable);
             tblUserList.DataSource = userListDataTable;
