@@ -16,6 +16,7 @@ namespace Doctor_Appointment_Management_System.User
     {
 
         private SqlConnection databaseConnection;
+        private bool isUpdate = false;
 
         public UserForm()
         {
@@ -35,10 +36,14 @@ namespace Doctor_Appointment_Management_System.User
             }
 
             // show error message if username is not entered
-            if (isUsernameExists(txtUsername.Text))
+            if (!isUpdate)
             {
-                MessageBox.Show("Username is already in use");
-                return false;
+                // this validation is checcked only when inserting
+                if (isUsernameExists(txtUsername.Text))
+                {
+                    MessageBox.Show("Username is already in use");
+                    return false;
+                }
             }
 
             // show error message if name field is not entered
@@ -74,7 +79,7 @@ namespace Doctor_Appointment_Management_System.User
 
         private bool isUsernameExists(String usernmae)
         {
-           
+
             SqlCommand selectUserCommand;
 
             selectUserCommand = new SqlCommand("SELECT count(id) as userCount FROM [user] WHERE username=@username", this.databaseConnection);
@@ -107,6 +112,93 @@ namespace Doctor_Appointment_Management_System.User
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (this.isUpdate)
+            {
+                updateUser();
+            }
+            else
+            {
+                saveUser();
+            }
+
+        }
+
+        private void UserForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loadUser(String id)
+        {
+
+            SqlCommand selectUserCommand;
+
+            selectUserCommand = new SqlCommand("SELECT id,username,name,email,user_type FROM [user] WHERE id=@id", this.databaseConnection);
+            Databse.DatabaseConnection.open(); // open databse
+
+            // bind values to select query
+            selectUserCommand.Parameters.AddWithValue("@id", id);
+
+            using (SqlDataReader reader = selectUserCommand.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    txtUsername.Text = reader["username"].ToString();
+                    txtName.Text = reader["name"].ToString();
+                    txtEmail.Text = reader["email"].ToString();
+                    cmbUserType.Text = reader["user_type"].ToString();
+                }
+            }
+
+            // we do not need the connection any more, close the database connection
+            Databse.DatabaseConnection.close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            btnSave.Text = "Update";
+            isUpdate = true;
+            loadUser(txtId.Text);
+        }
+
+
+        private void updateUser()
+        {
+            if (isValidUserForm())
+            {
+                try
+                {
+                    SqlCommand userInsertCommand;
+
+                    userInsertCommand = new SqlCommand("UPDATE [user] SET username=@username,name=@name,email=@email,password=@password,user_type=@userType where id=@id", this.databaseConnection);
+                    Databse.DatabaseConnection.open(); // open databse
+
+                    // bind values to insert query
+                    userInsertCommand.Parameters.AddWithValue("@id", txtId.Text);
+                    userInsertCommand.Parameters.AddWithValue("@username", txtUsername.Text);
+                    userInsertCommand.Parameters.AddWithValue("@name", txtName.Text);
+                    userInsertCommand.Parameters.AddWithValue("@email", txtEmail.Text);
+                    userInsertCommand.Parameters.AddWithValue("@password", txtPassword.Text);
+                    userInsertCommand.Parameters.AddWithValue("@userType", cmbUserType.Text.ToLower());
+
+                    // execute the insert command, data will be insert into database
+                    userInsertCommand.ExecuteNonQuery();
+
+                    // we do not need the connection any more close the database connection
+                    Databse.DatabaseConnection.close(); ;
+
+                    // show success message to user
+                    MessageBox.Show("User updated successfully!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("User update failed: " + ex.Message);
+                }
+            }
+        }
+
+        private void saveUser()
+        {
             if (isValidUserForm())
             {
                 try
@@ -114,7 +206,7 @@ namespace Doctor_Appointment_Management_System.User
                     SqlCommand userInsertCommand;
 
                     userInsertCommand = new SqlCommand("INSERT INTO [user] (username,name,email,password,user_type) VALUES (@username,@name,@email,@password,@userType)", this.databaseConnection);
-                     Databse.DatabaseConnection.open(); // open databse
+                    Databse.DatabaseConnection.open(); // open databse
 
                     // bind values to insert query
                     userInsertCommand.Parameters.AddWithValue("@username", txtUsername.Text);
@@ -137,11 +229,6 @@ namespace Doctor_Appointment_Management_System.User
                     MessageBox.Show("User save failed: " + ex.Message);
                 }
             }
-        }
-
-        private void UserForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
