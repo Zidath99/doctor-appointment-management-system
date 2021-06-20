@@ -38,6 +38,10 @@ namespace Doctor_Appointment_Management_System.User
             this.label3 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.cmbUserType = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -58,7 +62,7 @@ namespace Doctor_Appointment_Management_System.User
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(31, 337);
+            this.btnSave.Location = new System.Drawing.Point(44, 467);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 2;
@@ -115,11 +119,53 @@ namespace Doctor_Appointment_Management_System.User
             this.label4.TabIndex = 7;
             this.label4.Text = "Password";
             // 
+            // cmbUserType
+            // 
+            this.cmbUserType.FormattingEnabled = true;
+            this.cmbUserType.Items.AddRange(new object[] {
+            "Receptionist",
+            "Admin"});
+            this.cmbUserType.Location = new System.Drawing.Point(31, 411);
+            this.cmbUserType.Name = "cmbUserType";
+            this.cmbUserType.Size = new System.Drawing.Size(230, 24);
+            this.cmbUserType.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(32, 382);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 17);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "User Type";
+            // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.Location = new System.Drawing.Point(31, 344);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '*';
+            this.txtConfirmPassword.Size = new System.Drawing.Size(230, 22);
+            this.txtConfirmPassword.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 315);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(121, 17);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Confirm Password";
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 434);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(656, 558);
+            this.Controls.Add(this.txtConfirmPassword);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cmbUserType);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtEmail);
@@ -130,6 +176,7 @@ namespace Doctor_Appointment_Management_System.User
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
             this.Name = "UserForm";
+            this.Load += new System.EventHandler(this.UserForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +193,9 @@ namespace Doctor_Appointment_Management_System.User
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbUserType;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtConfirmPassword;
+        private System.Windows.Forms.Label label6;
     }
 }
