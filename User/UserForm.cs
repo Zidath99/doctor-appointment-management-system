@@ -126,7 +126,7 @@ namespace Doctor_Appointment_Management_System.User
                     // execute the insert command, data will be insert into database
                     userInsertCommand.ExecuteNonQuery();
 
-                    // we do not need the connection any more, close the database connection
+                    // we do not need the connection any more close the database connection
                     Databse.DatabaseConnection.close(); ;
 
                     // show success message to user
