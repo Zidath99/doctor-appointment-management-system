@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Doctor_Appointment_Management_System.User;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,12 +69,12 @@ namespace Doctor_Appointment_Management_System.Main
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+          
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
+           
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +103,13 @@ namespace Doctor_Appointment_Management_System.Main
             {
                 childForm.Close();
             }
+        }
+
+        private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserList userList = new UserList();
+            userList.MdiParent = this;
+            userList.Show();
         }
     }
 }
