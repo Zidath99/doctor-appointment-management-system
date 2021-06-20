@@ -62,7 +62,7 @@ namespace Doctor_Appointment_Management_System.User
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(44, 467);
+            this.btnSave.Location = new System.Drawing.Point(31, 467);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 2;
@@ -161,7 +161,7 @@ namespace Doctor_Appointment_Management_System.User
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(656, 558);
+            this.ClientSize = new System.Drawing.Size(701, 512);
             this.Controls.Add(this.txtConfirmPassword);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
