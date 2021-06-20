@@ -44,6 +44,19 @@ namespace Doctor_Appointment_Management_System.User
             userForm.Show();
         }
 
+        private void UserList_Load(object sender, EventArgs e)
+        {
+            loadUsers();
+        }
 
+        private void tblUserList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            loadUsers();
+        }
     }
 }
