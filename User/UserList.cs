@@ -14,6 +14,7 @@ namespace Doctor_Appointment_Management_System.User
     public partial class UserList : Form
     {
         private SqlConnection databaseConnection;
+        private String selectedRowId;
         public UserList()
         {
             InitializeComponent();
@@ -61,9 +62,8 @@ namespace Doctor_Appointment_Management_System.User
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-          DialogResult confirmResut =  MessageBox.Show("Are you sure you want to delete this user?","Delete User", MessageBoxButtons.YesNo);
+          DialogResult confirmResut =  MessageBox.Show(this,"Are you sure you want to delete this user?","Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            int userIdToDelete = 8;
             if (confirmResut == DialogResult.Yes) {
                 try
                 {
@@ -73,7 +73,7 @@ namespace Doctor_Appointment_Management_System.User
                     Databse.DatabaseConnection.open(); // open databse
 
                     // bind values to delete query
-                    userInsertCommand.Parameters.AddWithValue("@id", userIdToDelete);
+                    userInsertCommand.Parameters.AddWithValue("@id", this.selectedRowId);
 
                     // execute the delete command, data will be delete from database
                     userInsertCommand.ExecuteNonQuery();
@@ -85,12 +85,30 @@ namespace Doctor_Appointment_Management_System.User
                     loadUsers();
 
                     // show success message to user
-                    MessageBox.Show("User deleted successfully!");
+                    MessageBox.Show(this, "User deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("User delete failed: " + ex.Message);
+                    MessageBox.Show(this, "User delete failed: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            UserForm userForm = new UserForm();
+            userForm.loadUserToUpdate(this.selectedRowId);
+            userForm.Show();
+
+        }
+
+        private void tblUserList_SelectionChanged(object sender, EventArgs e)
+        {
+            if (tblUserList.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = tblUserList.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = tblUserList.Rows[selectedrowindex];
+                this.selectedRowId = Convert.ToString(selectedRow.Cells["id"].Value);
             }
         }
     }

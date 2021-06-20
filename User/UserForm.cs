@@ -16,7 +16,8 @@ namespace Doctor_Appointment_Management_System.User
     {
 
         private SqlConnection databaseConnection;
-        private bool isUpdate = false;
+        private bool isUpdate = false; // this flag is used to know whether this is add user form or update user form
+        private string userIdForUpdate; // we use this variable to store user Id and use for update
 
         public UserForm()
         {
@@ -154,13 +155,16 @@ namespace Doctor_Appointment_Management_System.User
             Databse.DatabaseConnection.close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /**
+         * This is public method that will called from the user list form when showing this form
+         * This will load user for the given user id and mark this form as update form*/
+        public void loadUserToUpdate(string userId)
         {
-            btnSave.Text = "Update";
-            isUpdate = true;
-            loadUser(txtId.Text);
+            btnSave.Text = "Update"; // change lable of the submit button to update
+            isUpdate = true; // change isUpdate flag to tru. so we know that this is an update form
+            this.userIdForUpdate = userId; // save user id in class variable so that update function can access this variable to do the update
+            loadUser(userId); // load user form 
         }
-
 
         private void updateUser()
         {
@@ -174,7 +178,7 @@ namespace Doctor_Appointment_Management_System.User
                     Databse.DatabaseConnection.open(); // open databse
 
                     // bind values to insert query
-                    userInsertCommand.Parameters.AddWithValue("@id", txtId.Text);
+                    userInsertCommand.Parameters.AddWithValue("@id", this.userIdForUpdate);
                     userInsertCommand.Parameters.AddWithValue("@username", txtUsername.Text);
                     userInsertCommand.Parameters.AddWithValue("@name", txtName.Text);
                     userInsertCommand.Parameters.AddWithValue("@email", txtEmail.Text);
