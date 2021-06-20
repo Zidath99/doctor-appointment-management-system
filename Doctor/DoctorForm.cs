@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Doctor_Appointment_Management_System.Doctor
 {
-    public partial class DoctorForm : Form
+    public partial class lblDoctorForm : Form
     {
-        public DoctorForm()
+        public lblDoctorForm()
         {
             InitializeComponent();
         }
