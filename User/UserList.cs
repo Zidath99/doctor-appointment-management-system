@@ -58,5 +58,40 @@ namespace Doctor_Appointment_Management_System.User
         {
             loadUsers();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+          DialogResult confirmResut =  MessageBox.Show("Are you sure you want to delete this user?","Delete User", MessageBoxButtons.YesNo);
+
+            int userIdToDelete = 8;
+            if (confirmResut == DialogResult.Yes) {
+                try
+                {
+                    SqlCommand userInsertCommand;
+
+                    userInsertCommand = new SqlCommand("DELETE [user] WHERE id=@id", this.databaseConnection);
+                    Databse.DatabaseConnection.open(); // open databse
+
+                    // bind values to delete query
+                    userInsertCommand.Parameters.AddWithValue("@id", userIdToDelete);
+
+                    // execute the delete command, data will be delete from database
+                    userInsertCommand.ExecuteNonQuery();
+
+                    // we do not need the connection any more close the database connection
+                    Databse.DatabaseConnection.close(); ;
+
+                    // refresh data table
+                    loadUsers();
+
+                    // show success message to user
+                    MessageBox.Show("User deleted successfully!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("User delete failed: " + ex.Message);
+                }
+            }
+        }
     }
 }

@@ -33,8 +33,8 @@ namespace Doctor_Appointment_Management_System.User
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tblUserList)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -87,15 +87,6 @@ namespace Doctor_Appointment_Management_System.User
             this.panel1.Size = new System.Drawing.Size(955, 51);
             this.panel1.TabIndex = 3;
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(99, 14);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(180, 14);
@@ -104,6 +95,16 @@ namespace Doctor_Appointment_Management_System.User
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(99, 14);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // UserList
             // 
