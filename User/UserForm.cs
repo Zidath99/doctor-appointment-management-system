@@ -23,10 +23,6 @@ namespace Doctor_Appointment_Management_System.User
             String name = txtName.Text;
             String email = txtEmail.Text;
             String password = txtPassword.Text;
-            Console.WriteLine(username);
-            Console.WriteLine(name);
-            Console.WriteLine(email);
-            Console.WriteLine(password);
         }
 
        
