@@ -31,7 +31,7 @@ namespace Doctor_Appointment_Management_System.Patient
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnload = new System.Windows.Forms.Button();
+            this.btnrefresh = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
             this.btnupdate = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@ namespace Doctor_Appointment_Management_System.Patient
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.btnload);
+            this.panel1.Controls.Add(this.btnrefresh);
             this.panel1.Controls.Add(this.btndelete);
             this.panel1.Controls.Add(this.btnupdate);
             this.panel1.Controls.Add(this.btnadd);
@@ -62,15 +62,14 @@ namespace Doctor_Appointment_Management_System.Patient
             this.panel1.Size = new System.Drawing.Size(536, 38);
             this.panel1.TabIndex = 1;
             // 
-            // btnload
+            // btnrefresh
             // 
-            this.btnload.Location = new System.Drawing.Point(292, 8);
-            this.btnload.Name = "btnload";
-            this.btnload.Size = new System.Drawing.Size(75, 23);
-            this.btnload.TabIndex = 3;
-            this.btnload.Text = "Load";
-            this.btnload.UseVisualStyleBackColor = true;
-            this.btnload.Click += new System.EventHandler(this.btnload_Click);
+            this.btnrefresh.Location = new System.Drawing.Point(292, 8);
+            this.btnrefresh.Name = "btnrefresh";
+            this.btnrefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnrefresh.TabIndex = 3;
+            this.btnrefresh.Text = "Refresh";
+            this.btnrefresh.UseVisualStyleBackColor = true;
             // 
             // btndelete
             // 
@@ -118,6 +117,7 @@ namespace Doctor_Appointment_Management_System.Patient
             this.Controls.Add(this.label1);
             this.Name = "PatientList";
             this.Text = "PatientList";
+            this.Load += new System.EventHandler(this.PatientList_Load_1);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tblpatientgrid)).EndInit();
             this.ResumeLayout(false);
@@ -132,7 +132,7 @@ namespace Doctor_Appointment_Management_System.Patient
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btnadd;
-        private System.Windows.Forms.Button btnload;
+        private System.Windows.Forms.Button btnrefresh;
         private System.Windows.Forms.DataGridView tblpatientgrid;
     }
 }
