@@ -11,7 +11,7 @@ namespace Doctor_Appointment_Management_System.Databse
             connection = new SqlConnection(connectionString);
             return connection;
         }
-
+         
         public static void open() {
             if (connection != null && connection.State == ConnectionState.Closed) {
                 connection.Open();
