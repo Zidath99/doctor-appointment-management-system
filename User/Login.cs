@@ -82,5 +82,10 @@ namespace Doctor_Appointment_Management_System.User
             // we do not need the connection any more, close the database connection
             Databse.DatabaseConnection.close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

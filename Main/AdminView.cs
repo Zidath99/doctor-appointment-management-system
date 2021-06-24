@@ -109,19 +109,55 @@ namespace Doctor_Appointment_Management_System.Main
 
         private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PatientList patientList = new PatientList();
-            patientList.MdiParent = this;
-            patientList.Show();
+          
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void manageDoctorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void createNewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserForm userForm = new UserForm();
+            userForm.MdiParent = this;
+            userForm.Show();
+        }
+
+        private void viewAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UserList userList = new UserList();
             userList.MdiParent = this;
             userList.Show();
         }
 
-        private void manageDoctorsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void createNewToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PatientForm patientForm = new PatientForm();
+            patientForm.MdiParent = this;
+            patientForm.Show();
+        }
+
+        private void viewAllToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PatientList patientList = new PatientList();
+            patientList.MdiParent = this;
+            patientList.Show();
+        }
+
+        private void createNewToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            DoctorForm doctorForm = new DoctorForm();
+            doctorForm.MdiParent = this;
+            doctorForm.Show();
+        }
+
+        private void viewAllToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             DoctorList doctorList = new DoctorList();
             doctorList.MdiParent = this;

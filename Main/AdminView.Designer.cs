@@ -30,7 +30,6 @@ namespace Doctor_Appointment_Management_System.Main
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminView));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,18 +37,17 @@ namespace Doctor_Appointment_Management_System.Main
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.printPreviewToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.createNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createNewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAllToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.createNewToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAllToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.appointmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createNewToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAllToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
-            this.toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -58,7 +56,8 @@ namespace Doctor_Appointment_Management_System.Main
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.manageUsersToolStripMenuItem,
-            this.manageDoctorsToolStripMenuItem});
+            this.manageDoctorsToolStripMenuItem,
+            this.appointmentsToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1153, 28);
@@ -67,23 +66,32 @@ namespace Doctor_Appointment_Management_System.Main
             // 
             // toolStripMenuItem1
             // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createNewToolStripMenuItem,
+            this.viewAllToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(116, 24);
-            this.toolStripMenuItem1.Text = "Manage Users";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(58, 24);
+            this.toolStripMenuItem1.Text = "Users";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // manageUsersToolStripMenuItem
             // 
+            this.manageUsersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createNewToolStripMenuItem1,
+            this.viewAllToolStripMenuItem1});
             this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
-            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
-            this.manageUsersToolStripMenuItem.Text = "Manage Patients";
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.manageUsersToolStripMenuItem.Text = "Patients";
             this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
             // manageDoctorsToolStripMenuItem
             // 
+            this.manageDoctorsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createNewToolStripMenuItem2,
+            this.viewAllToolStripMenuItem2});
             this.manageDoctorsToolStripMenuItem.Name = "manageDoctorsToolStripMenuItem";
-            this.manageDoctorsToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
-            this.manageDoctorsToolStripMenuItem.Text = "Manage Doctors";
+            this.manageDoctorsToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.manageDoctorsToolStripMenuItem.Text = "Doctors";
             this.manageDoctorsToolStripMenuItem.Click += new System.EventHandler(this.manageDoctorsToolStripMenuItem_Click);
             // 
             // statusStrip
@@ -104,89 +112,68 @@ namespace Doctor_Appointment_Management_System.Main
             this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // newToolStripButton
+            // createNewToolStripMenuItem
             // 
-            this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
-            this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.newToolStripButton.Name = "newToolStripButton";
-            this.newToolStripButton.Size = new System.Drawing.Size(29, 24);
-            this.newToolStripButton.Text = "New";
-            this.newToolStripButton.Click += new System.EventHandler(this.ShowNewForm);
+            this.createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
+            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.createNewToolStripMenuItem.Text = "Create New";
+            this.createNewToolStripMenuItem.Click += new System.EventHandler(this.createNewToolStripMenuItem_Click);
             // 
-            // openToolStripButton
+            // viewAllToolStripMenuItem
             // 
-            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
-            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size(29, 24);
-            this.openToolStripButton.Text = "Open";
-            this.openToolStripButton.Click += new System.EventHandler(this.OpenFile);
+            this.viewAllToolStripMenuItem.Name = "viewAllToolStripMenuItem";
+            this.viewAllToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.viewAllToolStripMenuItem.Text = "View All";
+            this.viewAllToolStripMenuItem.Click += new System.EventHandler(this.viewAllToolStripMenuItem_Click);
             // 
-            // saveToolStripButton
+            // createNewToolStripMenuItem1
             // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(29, 24);
-            this.saveToolStripButton.Text = "Save";
+            this.createNewToolStripMenuItem1.Name = "createNewToolStripMenuItem1";
+            this.createNewToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.createNewToolStripMenuItem1.Text = "Create New";
+            this.createNewToolStripMenuItem1.Click += new System.EventHandler(this.createNewToolStripMenuItem1_Click);
             // 
-            // toolStripSeparator1
+            // viewAllToolStripMenuItem1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.viewAllToolStripMenuItem1.Name = "viewAllToolStripMenuItem1";
+            this.viewAllToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.viewAllToolStripMenuItem1.Text = "View All";
+            this.viewAllToolStripMenuItem1.Click += new System.EventHandler(this.viewAllToolStripMenuItem1_Click);
             // 
-            // printToolStripButton
+            // createNewToolStripMenuItem2
             // 
-            this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
-            this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size(29, 24);
-            this.printToolStripButton.Text = "Print";
+            this.createNewToolStripMenuItem2.Name = "createNewToolStripMenuItem2";
+            this.createNewToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.createNewToolStripMenuItem2.Text = "Create New";
+            this.createNewToolStripMenuItem2.Click += new System.EventHandler(this.createNewToolStripMenuItem2_Click);
             // 
-            // printPreviewToolStripButton
+            // viewAllToolStripMenuItem2
             // 
-            this.printPreviewToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.printPreviewToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripButton.Image")));
-            this.printPreviewToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.printPreviewToolStripButton.Name = "printPreviewToolStripButton";
-            this.printPreviewToolStripButton.Size = new System.Drawing.Size(29, 24);
-            this.printPreviewToolStripButton.Text = "Print Preview";
+            this.viewAllToolStripMenuItem2.Name = "viewAllToolStripMenuItem2";
+            this.viewAllToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.viewAllToolStripMenuItem2.Text = "View All";
+            this.viewAllToolStripMenuItem2.Click += new System.EventHandler(this.viewAllToolStripMenuItem2_Click);
             // 
-            // toolStripSeparator2
+            // appointmentsToolStripMenuItem
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.appointmentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createNewToolStripMenuItem3,
+            this.viewAllToolStripMenuItem3});
+            this.appointmentsToolStripMenuItem.Name = "appointmentsToolStripMenuItem";
+            this.appointmentsToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
+            this.appointmentsToolStripMenuItem.Text = "Appointments";
             // 
-            // helpToolStripButton
+            // createNewToolStripMenuItem3
             // 
-            this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.helpToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripButton.Image")));
-            this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.helpToolStripButton.Name = "helpToolStripButton";
-            this.helpToolStripButton.Size = new System.Drawing.Size(29, 24);
-            this.helpToolStripButton.Text = "Help";
+            this.createNewToolStripMenuItem3.Name = "createNewToolStripMenuItem3";
+            this.createNewToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.createNewToolStripMenuItem3.Text = "Create New";
             // 
-            // toolStrip
+            // viewAllToolStripMenuItem3
             // 
-            this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripButton,
-            this.openToolStripButton,
-            this.saveToolStripButton,
-            this.toolStripSeparator1,
-            this.printToolStripButton,
-            this.printPreviewToolStripButton,
-            this.toolStripSeparator2,
-            this.helpToolStripButton});
-            this.toolStrip.Location = new System.Drawing.Point(0, 28);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1153, 27);
-            this.toolStrip.TabIndex = 1;
-            this.toolStrip.Text = "ToolStrip";
+            this.viewAllToolStripMenuItem3.Name = "viewAllToolStripMenuItem3";
+            this.viewAllToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.viewAllToolStripMenuItem3.Text = "View All";
             // 
             // AdminView
             // 
@@ -194,7 +181,6 @@ namespace Doctor_Appointment_Management_System.Main
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1153, 680);
             this.Controls.Add(this.statusStrip);
-            this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
@@ -206,8 +192,6 @@ namespace Doctor_Appointment_Management_System.Main
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            this.toolStrip.ResumeLayout(false);
-            this.toolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,17 +204,17 @@ namespace Doctor_Appointment_Management_System.Main
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem manageUsersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton newToolStripButton;
-        private System.Windows.Forms.ToolStripButton openToolStripButton;
-        private System.Windows.Forms.ToolStripButton saveToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton printToolStripButton;
-        private System.Windows.Forms.ToolStripButton printPreviewToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton helpToolStripButton;
-        private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem manageDoctorsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createNewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createNewToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem viewAllToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem createNewToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem viewAllToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem appointmentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createNewToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem viewAllToolStripMenuItem3;
     }
 }
 
