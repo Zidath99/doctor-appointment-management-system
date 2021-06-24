@@ -38,11 +38,49 @@ namespace Doctor_Appointment_Management_System.User
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Hide(); // hide login form
+            login();
+        }
 
-            // create new instance of Admin View 
-            AdminView adminView = new AdminView();
-            adminView.Show(); // show admin view
+        private void login()
+        {
+
+            SqlCommand selectUserCommand;
+
+            selectUserCommand = new SqlCommand("SELECT user_type FROM [user] WHERE username=@username AND password=@password", this.databaseConnection);
+            Databse.DatabaseConnection.open(); // open databse
+
+            // bind values to select query
+            selectUserCommand.Parameters.AddWithValue("@username", txtUsername.Text);
+            selectUserCommand.Parameters.AddWithValue("@password", txtPassword.Text);
+
+            using (SqlDataReader reader = selectUserCommand.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    Hide(); // hide login form
+
+                    string userType = reader["user_type"].ToString();
+                    if (userType == "admin")
+                    {
+                        // create new instance of Admin View 
+                        AdminView adminView = new AdminView();
+                        adminView.Show(); // show admin view
+                    }
+                    else
+                    {
+                        // create new instance of Receptionist View 
+                        ReceptionistView receptionistView = new ReceptionistView();
+                        receptionistView.Show(); // show Receptionist view
+                    }
+
+                }
+                else {
+                    MessageBox.Show(this, "Incorrect username or password. Please try again.", "Login Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            // we do not need the connection any more, close the database connection
+            Databse.DatabaseConnection.close();
         }
     }
 }

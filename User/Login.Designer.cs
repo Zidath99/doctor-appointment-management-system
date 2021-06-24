@@ -31,7 +31,7 @@ namespace Doctor_Appointment_Management_System.User
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -53,13 +53,13 @@ namespace Doctor_Appointment_Management_System.User
             this.txtUsername.Size = new System.Drawing.Size(273, 22);
             this.txtUsername.TabIndex = 1;
             // 
-            // textBox1
+            // txtPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(29, 120);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(273, 22);
-            this.textBox1.TabIndex = 3;
+            this.txtPassword.Location = new System.Drawing.Point(29, 120);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(273, 22);
+            this.txtPassword.TabIndex = 3;
             // 
             // label2
             // 
@@ -96,7 +96,7 @@ namespace Doctor_Appointment_Management_System.User
             this.ClientSize = new System.Drawing.Size(341, 239);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
@@ -114,7 +114,7 @@ namespace Doctor_Appointment_Management_System.User
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button button2;
