@@ -36,14 +36,14 @@ namespace Doctor_Appointment_Management_System.Patient
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtpatientid = new System.Windows.Forms.TextBox();
-            this.txtfirstname = new System.Windows.Forms.TextBox();
-            this.txtlastname = new System.Windows.Forms.TextBox();
-            this.txtaddress = new System.Windows.Forms.TextBox();
-            this.txtphone = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtdob = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtPatientId = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.txtDOB = new System.Windows.Forms.DateTimePicker();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.txtload = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -117,67 +117,67 @@ namespace Doctor_Appointment_Management_System.Patient
             this.label7.TabIndex = 6;
             this.label7.Text = "Patient Form";
             // 
-            // txtpatientid
+            // txtPatientId
             // 
-            this.txtpatientid.Location = new System.Drawing.Point(149, 104);
-            this.txtpatientid.Name = "txtpatientid";
-            this.txtpatientid.Size = new System.Drawing.Size(159, 20);
-            this.txtpatientid.TabIndex = 7;
+            this.txtPatientId.Location = new System.Drawing.Point(149, 104);
+            this.txtPatientId.Name = "txtPatientId";
+            this.txtPatientId.Size = new System.Drawing.Size(159, 20);
+            this.txtPatientId.TabIndex = 7;
             // 
-            // txtfirstname
+            // txtFirstName
             // 
-            this.txtfirstname.Location = new System.Drawing.Point(149, 133);
-            this.txtfirstname.Name = "txtfirstname";
-            this.txtfirstname.Size = new System.Drawing.Size(159, 20);
-            this.txtfirstname.TabIndex = 8;
+            this.txtFirstName.Location = new System.Drawing.Point(149, 133);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(159, 20);
+            this.txtFirstName.TabIndex = 8;
             // 
-            // txtlastname
+            // txtLastName
             // 
-            this.txtlastname.Location = new System.Drawing.Point(149, 162);
-            this.txtlastname.Name = "txtlastname";
-            this.txtlastname.Size = new System.Drawing.Size(159, 20);
-            this.txtlastname.TabIndex = 9;
+            this.txtLastName.Location = new System.Drawing.Point(149, 162);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(159, 20);
+            this.txtLastName.TabIndex = 9;
             // 
-            // txtaddress
+            // txtAddress
             // 
-            this.txtaddress.Location = new System.Drawing.Point(149, 219);
-            this.txtaddress.Name = "txtaddress";
-            this.txtaddress.Size = new System.Drawing.Size(159, 20);
-            this.txtaddress.TabIndex = 11;
+            this.txtAddress.Location = new System.Drawing.Point(149, 219);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(159, 20);
+            this.txtAddress.TabIndex = 11;
             // 
-            // txtphone
+            // txtPhone
             // 
-            this.txtphone.Location = new System.Drawing.Point(149, 248);
-            this.txtphone.Name = "txtphone";
-            this.txtphone.Size = new System.Drawing.Size(159, 20);
-            this.txtphone.TabIndex = 12;
+            this.txtPhone.Location = new System.Drawing.Point(149, 248);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(159, 20);
+            this.txtPhone.TabIndex = 12;
             // 
-            // button1
+            // btnSubmit
             // 
-            this.button1.Location = new System.Drawing.Point(219, 287);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 26);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSubmit.Location = new System.Drawing.Point(219, 287);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(89, 26);
+            this.btnSubmit.TabIndex = 13;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtdob
+            // txtDOB
             // 
-            this.txtdob.Location = new System.Drawing.Point(149, 190);
-            this.txtdob.Name = "txtdob";
-            this.txtdob.Size = new System.Drawing.Size(159, 20);
-            this.txtdob.TabIndex = 16;
+            this.txtDOB.Location = new System.Drawing.Point(149, 190);
+            this.txtDOB.Name = "txtDOB";
+            this.txtDOB.Size = new System.Drawing.Size(159, 20);
+            this.txtDOB.TabIndex = 16;
             // 
-            // button2
+            // btnLoad
             // 
-            this.button2.Location = new System.Drawing.Point(233, 58);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Load";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnLoad.Location = new System.Drawing.Point(233, 58);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 17;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtload
             // 
@@ -192,14 +192,14 @@ namespace Doctor_Appointment_Management_System.Patient
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(330, 343);
             this.Controls.Add(this.txtload);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.txtdob);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtphone);
-            this.Controls.Add(this.txtaddress);
-            this.Controls.Add(this.txtlastname);
-            this.Controls.Add(this.txtfirstname);
-            this.Controls.Add(this.txtpatientid);
+            this.Controls.Add(this.btnLoad);
+            this.Controls.Add(this.txtDOB);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.txtPhone);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtFirstName);
+            this.Controls.Add(this.txtPatientId);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -224,14 +224,14 @@ namespace Doctor_Appointment_Management_System.Patient
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtpatientid;
-        private System.Windows.Forms.TextBox txtfirstname;
-        private System.Windows.Forms.TextBox txtlastname;
-        private System.Windows.Forms.TextBox txtaddress;
-        private System.Windows.Forms.TextBox txtphone;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker txtdob;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtPatientId;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.DateTimePicker txtDOB;
+        private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.TextBox txtload;
     }
 }

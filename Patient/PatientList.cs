@@ -65,7 +65,7 @@ namespace Doctor_Appointment_Management_System.Patient
                 {
                     SqlCommand patientInsertCommand;
 
-                    patientInsertCommand = new SqlCommand("DELETE [user] WHERE id=@id", this.databaseConnection);
+                    patientInsertCommand = new SqlCommand("DELETE Patient WHERE id=@id", this.databaseConnection);
                     Databse.DatabaseConnection.open(); // open databse
 
                     // bind values to delete query

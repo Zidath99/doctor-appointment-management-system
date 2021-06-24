@@ -31,38 +31,38 @@ namespace Doctor_Appointment_Management_System.Patient
         private bool isValidPatientForm()
         {
             // show error message if patientID is not entered
-            if (txtpatientid.Text.Length == 0)
+            if (txtPatientId.Text.Length == 0)
             {
                 MessageBox.Show("Patient ID field is required");
                 return false;
             }
             // show error message if firstname is not entered
-            if (txtfirstname.Text.Length == 0)
+            if (txtFirstName.Text.Length == 0)
             {
                 MessageBox.Show("First Name field is required");
                 return false;
             }
 
             // show error message if lastname is not entered
-            if (txtlastname.Text.Length == 0)
+            if (txtLastName.Text.Length == 0)
             {
                 MessageBox.Show("Last Name field is required");
                 return false;
             }
             // show error message if dob is not entered
-            if (txtdob.Text.Length == 0)
+            if (txtDOB.Text.Length == 0)
             {
                 MessageBox.Show("DOB field is required");
                 return false;
             }
             // show error message if address is not entered
-            if (txtaddress.Text.Length == 0)
+            if (txtAddress.Text.Length == 0)
             {
                 MessageBox.Show("Address field is required");
                 return false;
             }
             // show error message if lastname is not entered
-            if (txtphone.Text.Length == 0)
+            if (txtPhone.Text.Length == 0)
             {
                 MessageBox.Show("Phone number field is required");
                 return false;
@@ -108,23 +108,17 @@ namespace Doctor_Appointment_Management_System.Patient
             {
                 if (reader.Read())
                 {
-                    txtfirstname.Text = reader["first_name"].ToString();
-                    txtlastname.Text = reader["last_name"].ToString();
-                    txtdob.Text = reader["dob"].ToString();
-                    txtaddress.Text = reader["address"].ToString();
-                    txtphone.Text = reader["phone_number"].ToString();
+                    txtFirstName.Text = reader["first_name"].ToString();
+                    txtLastName.Text = reader["last_name"].ToString();
+                    txtDOB.Text = reader["dob"].ToString();
+                    txtAddress.Text = reader["address"].ToString();
+                    txtPhone.Text = reader["phone_number"].ToString();
                 }
             }
 
             // we do not need the connection any more, close the database connection
             Databse.DatabaseConnection.close();
         }
-
-       /* private void button1_Click(object sender, EventArgs e)
-        {
-            loadPatient(txtloadpatientId.Text);
-        }*/
-
 
         private void updatePatient()
         {
@@ -138,12 +132,12 @@ namespace Doctor_Appointment_Management_System.Patient
                     Databse.DatabaseConnection.open(); // open databse
 
                     // bind values to insert query
-                    patientInsertCommand.Parameters.AddWithValue("@id", txtpatientid.Text);
-                    patientInsertCommand.Parameters.AddWithValue("@firstname", txtfirstname.Text);
-                    patientInsertCommand.Parameters.AddWithValue("@lastname", txtlastname.Text);
-                    patientInsertCommand.Parameters.AddWithValue("@dob", txtdob.Text);
-                    patientInsertCommand.Parameters.AddWithValue("@address", txtaddress.Text);
-                    patientInsertCommand.Parameters.AddWithValue("@phone", txtphone.Text);
+                    patientInsertCommand.Parameters.AddWithValue("@id", txtPatientId.Text);
+                    patientInsertCommand.Parameters.AddWithValue("@firstname", txtFirstName.Text);
+                    patientInsertCommand.Parameters.AddWithValue("@lastname", txtLastName.Text);
+                    patientInsertCommand.Parameters.AddWithValue("@dob", txtDOB.Text);
+                    patientInsertCommand.Parameters.AddWithValue("@address", txtAddress.Text);
+                    patientInsertCommand.Parameters.AddWithValue("@phone", txtPhone.Text);
 
                     // execute the insert command, data will be insert into database
                     patientInsertCommand.ExecuteNonQuery();
@@ -173,12 +167,12 @@ namespace Doctor_Appointment_Management_System.Patient
                     Databse.DatabaseConnection.open(); // open databse
 
                     // bind values to insert query
-                    patientInsertCommand.Parameters.AddWithValue("@patientid", txtpatientid.Text);
-                    patientInsertCommand.Parameters.AddWithValue("@firstname", txtfirstname.Text);
-                    patientInsertCommand.Parameters.AddWithValue("@lastname", txtlastname.Text);
-                    patientInsertCommand.Parameters.AddWithValue("@dob", txtdob.Text);
-                    patientInsertCommand.Parameters.AddWithValue("@address", txtaddress.Text);
-                    patientInsertCommand.Parameters.AddWithValue("@phone", txtphone.Text);
+                    patientInsertCommand.Parameters.AddWithValue("@patientid", txtPatientId.Text);
+                    patientInsertCommand.Parameters.AddWithValue("@firstname", txtFirstName.Text);
+                    patientInsertCommand.Parameters.AddWithValue("@lastname", txtLastName.Text);
+                    patientInsertCommand.Parameters.AddWithValue("@dob", txtDOB.Text);
+                    patientInsertCommand.Parameters.AddWithValue("@address", txtAddress.Text);
+                    patientInsertCommand.Parameters.AddWithValue("@phone", txtPhone.Text);
 
                     // execute the insert command, data will be insert into database
                     patientInsertCommand.ExecuteNonQuery();
@@ -198,7 +192,7 @@ namespace Doctor_Appointment_Management_System.Patient
 
         private void button2_Click(object sender, EventArgs e)
         {
-            button1.Text = "Update";
+            btnSubmit.Text = "Update";
             isUpdate = true;
             loadPatient(txtload.Text);
         }
