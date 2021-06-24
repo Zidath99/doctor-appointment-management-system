@@ -149,6 +149,7 @@ namespace Doctor_Appointment_Management_System.Patient
             this.btnSubmit.TabIndex = 13;
             this.btnSubmit.Text = "Save";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // PatientForm
             // 
@@ -169,6 +170,7 @@ namespace Doctor_Appointment_Management_System.Patient
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.label1);
             this.Name = "PatientForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Create Patient";
             this.ResumeLayout(false);
             this.PerformLayout();

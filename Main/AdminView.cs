@@ -1,4 +1,5 @@
-﻿using Doctor_Appointment_Management_System.User;
+﻿using Doctor_Appointment_Management_System.Patient;
+using Doctor_Appointment_Management_System.User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -106,6 +107,13 @@ namespace Doctor_Appointment_Management_System.Main
         }
 
         private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PatientList patientList = new PatientList();
+            patientList.MdiParent = this;
+            patientList.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             UserList userList = new UserList();
             userList.MdiParent = this;

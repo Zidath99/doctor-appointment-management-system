@@ -142,6 +142,9 @@
     <EmbeddedResource Include="Patient\PatientForm.resx">
       <DependentUpon>PatientForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Patient\PatientList.resx">
+      <DependentUpon>PatientList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

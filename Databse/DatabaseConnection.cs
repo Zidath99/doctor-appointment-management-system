@@ -13,7 +13,7 @@ namespace Doctor_Appointment_Management_System.Databse
         }
          
         public static void open() {
-            if (connection != null && connection.State == ConnectionState.Closed) {
+            if (connection != null && connection.State != ConnectionState.Open) {
                 connection.Open();
             }
         }
