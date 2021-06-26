@@ -68,14 +68,16 @@ namespace Doctor_Appointment_Management_System.Main
             // createNewToolStripMenuItem
             // 
             this.createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
-            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.createNewToolStripMenuItem.Text = "Create New";
+            this.createNewToolStripMenuItem.Click += new System.EventHandler(this.createNewToolStripMenuItem_Click);
             // 
             // viewAllToolStripMenuItem
             // 
             this.viewAllToolStripMenuItem.Name = "viewAllToolStripMenuItem";
-            this.viewAllToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.viewAllToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.viewAllToolStripMenuItem.Text = "View All";
+            this.viewAllToolStripMenuItem.Click += new System.EventHandler(this.viewAllToolStripMenuItem_Click);
             // 
             // customersToolStripMenuItem
             // 
@@ -89,14 +91,14 @@ namespace Doctor_Appointment_Management_System.Main
             // createNewToolStripMenuItem1
             // 
             this.createNewToolStripMenuItem1.Name = "createNewToolStripMenuItem1";
-            this.createNewToolStripMenuItem1.Size = new System.Drawing.Size(169, 26);
+            this.createNewToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.createNewToolStripMenuItem1.Text = "Create New";
             this.createNewToolStripMenuItem1.Click += new System.EventHandler(this.createNewToolStripMenuItem1_Click);
             // 
             // viewAllToolStripMenuItem1
             // 
             this.viewAllToolStripMenuItem1.Name = "viewAllToolStripMenuItem1";
-            this.viewAllToolStripMenuItem1.Size = new System.Drawing.Size(169, 26);
+            this.viewAllToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.viewAllToolStripMenuItem1.Text = "View All";
             this.viewAllToolStripMenuItem1.Click += new System.EventHandler(this.viewAllToolStripMenuItem1_Click);
             // 

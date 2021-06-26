@@ -1,4 +1,5 @@
-﻿using Doctor_Appointment_Management_System.Doctor;
+﻿using Doctor_Appointment_Management_System.Appointment;
+using Doctor_Appointment_Management_System.Doctor;
 using Doctor_Appointment_Management_System.Patient;
 using Doctor_Appointment_Management_System.User;
 using System;
@@ -162,6 +163,25 @@ namespace Doctor_Appointment_Management_System.Main
             DoctorList doctorList = new DoctorList();
             doctorList.MdiParent = this;
             doctorList.Show();
+        }
+
+        private void appointmentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void createNewToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            AppointmentForm appointmentForm = new AppointmentForm();
+            appointmentForm.MdiParent = this;
+            appointmentForm.Show();
+        }
+
+        private void viewAllToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            AppointmentList appoinmentList = new AppointmentList();
+            appoinmentList.MdiParent = this;
+            appoinmentList.Show();
         }
     }
 }
