@@ -233,6 +233,71 @@ namespace Doctor_Appointment_Management_System.Appointment
             PatientForm patientForm = new PatientForm();
             patientForm.ShowDialog(this);
         }
+
+        private void btnFindPatient_Click(object sender, EventArgs e)
+        {
+            this.databaseConnection = Databse.DatabaseConnection.getConnection();
+            SqlCommand selectUserCommand;
+
+            selectUserCommand = new SqlCommand("SELECT first_name,last_name FROM [patient] WHERE id=@id", this.databaseConnection);
+            Databse.DatabaseConnection.open(); // open databse
+
+            // bind values to select query
+            selectUserCommand.Parameters.AddWithValue("@id", txtPatientId.Text);
+
+            using (SqlDataReader reader = selectUserCommand.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    txtPatientName.Text = reader["first_name"].ToString() + " " + reader["last_name"].ToString();
+                }
+                else {
+                    MessageBox.Show(this, "Patient not found. Please check patient ID is correct.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            // we do not need the connection any more, close the database connection
+            Databse.DatabaseConnection.close();
+
+        }
+
+        private void txtPatientId_TextChanged(object sender, EventArgs e)
+        {
+            txtPatientName.Text = "";
+        }
+
+        private void btnFindDoctor_Click(object sender, EventArgs e)
+        {
+            this.databaseConnection = Databse.DatabaseConnection.getConnection();
+            SqlCommand selectDoctorCommand;
+
+            selectDoctorCommand = new SqlCommand("SELECT first_name,last_name,consultation_fee FROM [doctor] WHERE id=@id", this.databaseConnection);
+            Databse.DatabaseConnection.open(); // open databse
+
+            // bind values to select query
+            selectDoctorCommand.Parameters.AddWithValue("@id", txtDoctorId.Text);
+
+            using (SqlDataReader reader = selectDoctorCommand.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    txtDoctorName.Text = reader["first_name"].ToString() + " " + reader["last_name"].ToString();
+                    txtxDoctorFee.Text = reader["consultation_fee"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show(this, "Doctor not found. Please check doctor ID is correct.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            // we do not need the connection any more, close the database connection
+            Databse.DatabaseConnection.close();
+        }
+
+        private void txtDoctorId_TextChanged(object sender, EventArgs e)
+        {
+            txtDoctorName.Text = "";
+        }
     }
 
 }

@@ -52,7 +52,7 @@ namespace Doctor_Appointment_Management_System.Appointment
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(7, 425);
+            this.btnSubmit.Location = new System.Drawing.Point(16, 424);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 30);
             this.btnSubmit.TabIndex = 27;
@@ -75,11 +75,13 @@ namespace Doctor_Appointment_Management_System.Appointment
             this.txtPatientId.Name = "txtPatientId";
             this.txtPatientId.Size = new System.Drawing.Size(136, 22);
             this.txtPatientId.TabIndex = 29;
+            this.txtPatientId.TextChanged += new System.EventHandler(this.txtPatientId_TextChanged);
             // 
             // txtPatientName
             // 
             this.txtPatientName.Location = new System.Drawing.Point(114, 143);
             this.txtPatientName.Name = "txtPatientName";
+            this.txtPatientName.ReadOnly = true;
             this.txtPatientName.Size = new System.Drawing.Size(301, 22);
             this.txtPatientName.TabIndex = 30;
             // 
@@ -91,6 +93,7 @@ namespace Doctor_Appointment_Management_System.Appointment
             this.btnFindPatient.TabIndex = 31;
             this.btnFindPatient.Text = "Find";
             this.btnFindPatient.UseVisualStyleBackColor = true;
+            this.btnFindPatient.Click += new System.EventHandler(this.btnFindPatient_Click);
             // 
             // btnNewPatient
             // 
@@ -120,11 +123,13 @@ namespace Doctor_Appointment_Management_System.Appointment
             this.btnFindDoctor.TabIndex = 36;
             this.btnFindDoctor.Text = "Find";
             this.btnFindDoctor.UseVisualStyleBackColor = true;
+            this.btnFindDoctor.Click += new System.EventHandler(this.btnFindDoctor_Click);
             // 
             // txtDoctorName
             // 
             this.txtDoctorName.Location = new System.Drawing.Point(114, 234);
             this.txtDoctorName.Name = "txtDoctorName";
+            this.txtDoctorName.ReadOnly = true;
             this.txtDoctorName.Size = new System.Drawing.Size(301, 22);
             this.txtDoctorName.TabIndex = 35;
             // 
@@ -134,6 +139,7 @@ namespace Doctor_Appointment_Management_System.Appointment
             this.txtDoctorId.Name = "txtDoctorId";
             this.txtDoctorId.Size = new System.Drawing.Size(136, 22);
             this.txtDoctorId.TabIndex = 34;
+            this.txtDoctorId.TextChanged += new System.EventHandler(this.txtDoctorId_TextChanged);
             // 
             // label2
             // 
@@ -156,9 +162,9 @@ namespace Doctor_Appointment_Management_System.Appointment
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 43);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 17);
+            this.label3.Size = new System.Drawing.Size(38, 17);
             this.label3.TabIndex = 39;
-            this.label3.Text = "Date Time";
+            this.label3.Text = "Date";
             // 
             // txtxDoctorFee
             // 
@@ -166,6 +172,8 @@ namespace Doctor_Appointment_Management_System.Appointment
             this.txtxDoctorFee.Name = "txtxDoctorFee";
             this.txtxDoctorFee.Size = new System.Drawing.Size(136, 22);
             this.txtxDoctorFee.TabIndex = 41;
+            this.txtxDoctorFee.Text = "0.00";
+            this.txtxDoctorFee.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtxDoctorFee.TextChanged += new System.EventHandler(this.txtxDoctorFee_TextChanged);
             // 
             // label4
@@ -183,6 +191,8 @@ namespace Doctor_Appointment_Management_System.Appointment
             this.txtHospitalFee.Name = "txtHospitalFee";
             this.txtHospitalFee.Size = new System.Drawing.Size(136, 22);
             this.txtHospitalFee.TabIndex = 43;
+            this.txtHospitalFee.Text = "600.00";
+            this.txtHospitalFee.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHospitalFee.TextChanged += new System.EventHandler(this.txtHospitalFee_TextChanged);
             // 
             // label5
@@ -196,11 +206,13 @@ namespace Doctor_Appointment_Management_System.Appointment
             // 
             // txtxTotalFee
             // 
-            this.txtxTotalFee.Enabled = false;
             this.txtxTotalFee.Location = new System.Drawing.Point(114, 375);
             this.txtxTotalFee.Name = "txtxTotalFee";
+            this.txtxTotalFee.ReadOnly = true;
             this.txtxTotalFee.Size = new System.Drawing.Size(136, 22);
             this.txtxTotalFee.TabIndex = 45;
+            this.txtxTotalFee.Text = "600.00";
+            this.txtxTotalFee.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
@@ -237,7 +249,7 @@ namespace Doctor_Appointment_Management_System.Appointment
             this.Controls.Add(this.btnSubmit);
             this.Name = "AppointmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "CreateAppointment";
+            this.Text = "Create Appointment";
             this.ResumeLayout(false);
             this.PerformLayout();
 
