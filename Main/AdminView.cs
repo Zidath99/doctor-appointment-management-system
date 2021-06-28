@@ -72,12 +72,12 @@ namespace Doctor_Appointment_Management_System.Main
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -110,17 +110,17 @@ namespace Doctor_Appointment_Management_System.Main
 
         private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void manageDoctorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-         
+
         }
 
         private void createNewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -182,6 +182,18 @@ namespace Doctor_Appointment_Management_System.Main
             AppointmentList appoinmentList = new AppointmentList();
             appoinmentList.MdiParent = this;
             appoinmentList.Show();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult confirmResut = MessageBox.Show(this, "Are you sure you want to logout?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmResut == DialogResult.Yes)
+            {
+                Hide();
+                Login login = new Login();
+                login.Show();
+            }
         }
     }
 }

@@ -40,6 +40,7 @@ namespace Doctor_Appointment_Management_System.Main
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +50,8 @@ namespace Doctor_Appointment_Management_System.Main
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.appointmentsToolStripMenuItem,
-            this.customersToolStripMenuItem});
+            this.customersToolStripMenuItem,
+            this.logoutToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1137, 28);
@@ -68,14 +70,14 @@ namespace Doctor_Appointment_Management_System.Main
             // createNewToolStripMenuItem
             // 
             this.createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
-            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.createNewToolStripMenuItem.Text = "Create New";
             this.createNewToolStripMenuItem.Click += new System.EventHandler(this.createNewToolStripMenuItem_Click);
             // 
             // viewAllToolStripMenuItem
             // 
             this.viewAllToolStripMenuItem.Name = "viewAllToolStripMenuItem";
-            this.viewAllToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.viewAllToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.viewAllToolStripMenuItem.Text = "View All";
             this.viewAllToolStripMenuItem.Click += new System.EventHandler(this.viewAllToolStripMenuItem_Click);
             // 
@@ -91,14 +93,14 @@ namespace Doctor_Appointment_Management_System.Main
             // createNewToolStripMenuItem1
             // 
             this.createNewToolStripMenuItem1.Name = "createNewToolStripMenuItem1";
-            this.createNewToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.createNewToolStripMenuItem1.Size = new System.Drawing.Size(169, 26);
             this.createNewToolStripMenuItem1.Text = "Create New";
             this.createNewToolStripMenuItem1.Click += new System.EventHandler(this.createNewToolStripMenuItem1_Click);
             // 
             // viewAllToolStripMenuItem1
             // 
             this.viewAllToolStripMenuItem1.Name = "viewAllToolStripMenuItem1";
-            this.viewAllToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.viewAllToolStripMenuItem1.Size = new System.Drawing.Size(169, 26);
             this.viewAllToolStripMenuItem1.Text = "View All";
             this.viewAllToolStripMenuItem1.Click += new System.EventHandler(this.viewAllToolStripMenuItem1_Click);
             // 
@@ -119,6 +121,13 @@ namespace Doctor_Appointment_Management_System.Main
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // ReceptionistView
             // 
@@ -154,6 +163,7 @@ namespace Doctor_Appointment_Management_System.Main
         private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createNewToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem viewAllToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }
 

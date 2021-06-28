@@ -46,6 +46,7 @@ namespace Doctor_Appointment_Management_System.Main
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +58,8 @@ namespace Doctor_Appointment_Management_System.Main
             this.toolStripMenuItem1,
             this.manageUsersToolStripMenuItem,
             this.manageDoctorsToolStripMenuItem,
-            this.appointmentsToolStripMenuItem});
+            this.appointmentsToolStripMenuItem,
+            this.logoutToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1153, 28);
@@ -149,14 +151,14 @@ namespace Doctor_Appointment_Management_System.Main
             // createNewToolStripMenuItem3
             // 
             this.createNewToolStripMenuItem3.Name = "createNewToolStripMenuItem3";
-            this.createNewToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.createNewToolStripMenuItem3.Size = new System.Drawing.Size(169, 26);
             this.createNewToolStripMenuItem3.Text = "Create New";
             this.createNewToolStripMenuItem3.Click += new System.EventHandler(this.createNewToolStripMenuItem3_Click);
             // 
             // viewAllToolStripMenuItem3
             // 
             this.viewAllToolStripMenuItem3.Name = "viewAllToolStripMenuItem3";
-            this.viewAllToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.viewAllToolStripMenuItem3.Size = new System.Drawing.Size(169, 26);
             this.viewAllToolStripMenuItem3.Text = "View All";
             this.viewAllToolStripMenuItem3.Click += new System.EventHandler(this.viewAllToolStripMenuItem3_Click);
             // 
@@ -177,6 +179,13 @@ namespace Doctor_Appointment_Management_System.Main
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // AdminView
             // 
@@ -218,6 +227,7 @@ namespace Doctor_Appointment_Management_System.Main
         private System.Windows.Forms.ToolStripMenuItem appointmentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createNewToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem viewAllToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }
 
